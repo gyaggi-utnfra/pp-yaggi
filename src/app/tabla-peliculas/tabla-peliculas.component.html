@@ -1,0 +1,30 @@
+<!-- src/app/tabla-peliculas/tabla-peliculas.component.html -->
+<table class="table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Tipo</th>
+        <th>Fecha de Estreno</th>
+        <th>Cantidad de Público</th>
+        <th>Foto</th>
+        <th>Protagonista</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let pelicula of peliculas">
+        <td>{{ pelicula.id }}</td>
+        <td>{{ pelicula.nombre }}</td>
+        <td>{{ pelicula.tipo }}</td>
+        <td>{{ pelicula.fechaEstreno | date }}</td>
+        <td>{{ pelicula.cantidadPublico }}</td>
+        <td><img [src]="pelicula.foto" alt="{{ pelicula.nombre }}" width="50"></td>
+        <td>{{ pelicula.protagonista }}</td>
+        <td>
+          <button (click)="onPeliculaSeleccionada(pelicula)">Ver Detalle</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  

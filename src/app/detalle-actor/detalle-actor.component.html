@@ -1,0 +1,10 @@
+<div *ngIf="actor">
+    <h4>Detalles del Actor</h4>
+    <p><strong>Nombre:</strong> {{ actor.nombre }}</p>
+    <p><strong>Apellido:</strong> {{ actor.apellido }}</p>
+    <p><strong>Documento:</strong> {{ actor.documento }}</p>
+    <p><strong>Edad:</strong> {{ actor.edad }}</p>
+  </div>
+  <div *ngIf="!actor">
+    <p>Selecciona un actor para ver los detalles.</p>
+  </div>

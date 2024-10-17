@@ -1,0 +1,26 @@
+.container {
+    background-color: transparent; /* Asegúrate de que el fondo sea transparente */
+}
+
+:host {
+    display: block;
+    min-height: 100vh; /* Cambiar height a min-height */
+    background: -webkit-linear-gradient(180deg, #12a551, #00a4a8, #0898ca); /* Gradiente */
+    background: linear-gradient(180deg, #12a551, #00a4a8, #0898ca); /* Gradiente */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+} 
+
+  nav {
+    background-color: #343a40; // Color de fondo para la barra de navegación
+  }
+  
+  .nav-link {
+    color: #ffffff; // Color de los enlaces
+  }
+  
+  .nav-link:hover {
+    color: #adb5bd; // Color de los enlaces al pasar el mouse
+  }
+  

@@ -1,0 +1,25 @@
+<div class="container">
+  <header class="text-center my-4">
+    <h1>{{ title }}</h1>
+    <nav>
+      <ul class="nav justify-content-center">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/peliculas">Películas</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/altaPelicula">Alta Película</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/actores">Actores</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/altaActor">Alta Actor</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <router-outlet></router-outlet> <!-- Aquí se cargarán los componentes según la ruta -->
+  </main>
+</div>

@@ -1,0 +1,40 @@
+<div class="container py-4">
+    <header class="pb-3 mb-4 border-bottom">
+      <h2>Gestión de Actores</h2>
+    </header>
+  
+    <div class="row align-items-md-stretch">
+      <!-- Listado de Actores -->
+      <div class="col-md-12">
+        <div class="p-3 bg-light border rounded-3">
+          <h4>Listado de Actores</h4>
+          <!-- Aquí se dispara el evento actorSeleccionado, que llama a seleccionarActor($event) -->
+          <app-listado-actores (actorSeleccionado)="seleccionarActor($event)"></app-listado-actores>
+        </div>
+      </div>
+    </div>
+  
+    <div class="row mt-4">
+      <!-- Detalle del Actor -->
+      <div class="col-md-4">
+        <div class="p-3 bg-light border rounded-3">
+          <app-detalle-actor [actor]="actorSeleccionado"></app-detalle-actor>
+        </div>
+      </div>
+  
+      <!-- Detalle del País -->
+      <div class="col-md-4">
+        <div class="p-3 bg-light border rounded-3">
+            <app-detalle-pais [pais]="actorSeleccionado?.pais ?? null"></app-detalle-pais>
+        </div>
+      </div>
+  
+      <!-- Películas del Actor -->
+      <div class="col-md-4">
+        <div class="p-3 bg-light border rounded-3">
+          <app-peliculas-actor [actorId]="actorSeleccionado?.nombre ?? null"></app-peliculas-actor>
+        </div>
+      </div>
+    </div>
+  </div>
+  

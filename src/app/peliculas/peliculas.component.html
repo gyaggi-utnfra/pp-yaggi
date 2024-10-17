@@ -1,0 +1,32 @@
+<div class="container mt-4">
+  <h2 class="text-center mb-4">Listado de Películas</h2>
+  
+  <table class="table table-striped">
+      <thead class="thead-dark">
+          <tr>
+              <th>ID</th>
+              <th>Nombre</th>
+              <th>Tipo</th>
+              <th>Fecha de Estreno</th>
+              <th>Cantidad de Público</th>
+              <th>Foto</th>
+              <th>Protagonista</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr *ngFor="let pelicula of peliculas$ | async" (click)="mostrarDetalle(pelicula)" style="cursor: pointer;">
+              <td>{{ pelicula.id }}</td>
+              <td>{{ pelicula.nombre }}</td>
+              <td>{{ pelicula.tipo }}</td>
+              <td>{{ pelicula.fechaEstreno }}</td>
+              <td>{{ pelicula.cantidadPublico }}</td>
+              <td><img [src]="pelicula.foto" alt="{{ pelicula.nombre }}" style="width: 50px; height: auto;" /></td>
+              <td>{{ pelicula.protagonista }}</td>
+          </tr>
+      </tbody>
+  </table>
+
+  <div class="mt-5">
+      <app-detalle-pelicula [pelicula]="peliculaSeleccionada"></app-detalle-pelicula>
+  </div>
+</div>

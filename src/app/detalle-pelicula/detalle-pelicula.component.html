@@ -1,0 +1,27 @@
+<div class="container mt-4">
+    <h2 class="mb-4">Detalles de la Película</h2>
+    
+    <div *ngIf="pelicula" class="card">
+      <div class="card-header">
+        <h4>{{ pelicula.nombre }}</h4>
+      </div>
+      <div class="card-body">
+        <div class="row">
+          <div class="col-md-4">
+            <img [src]="pelicula.foto" alt="{{ pelicula.nombre }}" class="img-fluid" />
+          </div>
+          <div class="col-md-8">
+            <p><strong>Tipo:</strong> {{ pelicula.tipo }}</p>
+            <p><strong>Fecha de Estreno:</strong> {{ pelicula.fechaEstreno }}</p>
+            <p><strong>Cantidad de Público:</strong> {{ pelicula.cantidadPublico }}</p>
+            <p><strong>Protagonista:</strong> {{ pelicula.protagonista }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div *ngIf="!pelicula" class="alert alert-warning mt-4">
+      No se ha seleccionado ninguna película.
+    </div>
+  </div>
+  

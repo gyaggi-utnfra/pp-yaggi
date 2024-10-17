@@ -1,0 +1,31 @@
+<div class="container mt-4">
+    <h2 class="mb-4">Listado de Actores</h2>
+    
+    <!-- Mostrar mensaje si no hay actores -->
+    <div *ngIf="actores.length === 0" class="alert alert-info">
+      No hay actores disponibles.
+    </div>
+  
+    <!-- Tabla de actores -->
+    <table *ngIf="actores.length > 0" class="table table-striped">
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Apellido</th>
+          <th>Documento</th>
+          <th>Edad</th>
+          <th>País</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let actor of actores" (click)="seleccionarActor(actor)" style="cursor: pointer;">
+          <td>{{ actor.nombre }}</td>
+          <td>{{ actor.apellido }}</td>
+          <td>{{ actor.documento }}</td>
+          <td>{{ actor.edad }}</td>
+          <td>{{ actor.pais }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

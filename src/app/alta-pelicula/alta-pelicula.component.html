@@ -1,0 +1,68 @@
+<div class="container mt-4">
+    <h2 class="mb-4">Agregar Nueva Película</h2>
+    <div class="row">
+        <div class="col-md-6">
+            <form (ngSubmit)="agregarPelicula()" #peliculaForm="ngForm" novalidate>
+                <div class="form-group">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" [(ngModel)]="nuevaPelicula.nombre" name="nombre" class="form-control" required>
+                    <div *ngIf="peliculaForm.controls['nombre']?.invalid && (peliculaForm.controls['nombre']?.touched || peliculaForm.submitted)" class="text-danger">
+                        El nombre es requerido.
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="tipo">Tipo:</label>
+                    <select id="tipo" [(ngModel)]="nuevaPelicula.tipo" name="tipo" class="form-select" required>
+                        <option value="" disabled selected>Seleccione un tipo</option>
+                        <option value="terror">Terror</option>
+                        <option value="comedia">Comedia</option>
+                        <option value="amor">Amor</option>
+                        <option value="otros">Otros</option>
+                    </select>
+                    <div *ngIf="peliculaForm.controls['tipo']?.invalid && (peliculaForm.controls['tipo']?.touched || peliculaForm.submitted)" class="text-danger">
+                        El tipo es requerido.
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="fechaEstreno">Fecha de Estreno:</label>
+                    <input type="date" id="fechaEstreno" [(ngModel)]="nuevaPelicula.fechaEstreno" name="fechaEstreno" class="form-control" required>
+                    <div *ngIf="peliculaForm.controls['fechaEstreno']?.invalid && (peliculaForm.controls['fechaEstreno']?.touched || peliculaForm.submitted)" class="text-danger">
+                        La fecha de estreno es requerida.
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="cantidadPublico">Cantidad de Público:</label>
+                    <input type="number" id="cantidadPublico" [(ngModel)]="nuevaPelicula.cantidadPublico" name="cantidadPublico" class="form-control" required min="0">
+                    <div *ngIf="peliculaForm.controls['cantidadPublico']?.invalid && (peliculaForm.controls['cantidadPublico']?.touched || peliculaForm.submitted)" class="text-danger">
+                        La cantidad de público es requerida y debe ser mayor o igual a 0.
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="foto">Foto (URL):</label>
+                    <input type="url" id="foto" [(ngModel)]="nuevaPelicula.foto" name="foto" class="form-control" required>
+                    <div *ngIf="peliculaForm.controls['foto']?.invalid && (peliculaForm.controls['foto']?.touched || peliculaForm.submitted)" class="text-danger">
+                        La URL de la foto es requerida y debe ser válida.
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="protagonista">Protagonista:</label>
+                    <input type="text" id="protagonista" [(ngModel)]="nuevaPelicula.protagonista" name="protagonista" class="form-control" readonly>
+                    <div *ngIf="!nuevaPelicula.protagonista" class="text-danger">
+                        El protagonista es requerido.
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary" [disabled]="peliculaForm.invalid">Agregar Película</button>
+            </form>
+        </div>
+        <div class="col-md-6">
+            <h3>Seleccionar Actor:</h3>
+            <app-tabla-actores (actorSeleccionado)="seleccionarActor($event)"></app-tabla-actores>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,23 @@
+<div class="table-responsive" style="max-height: 400px; overflow-y: auto;">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Bandera</th>
+          <th>País</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let pais of paises">
+          <td>
+            <img [src]="pais.flags.png" alt="Bandera de {{ pais.name.common }}" style="width: 50px;">
+          </td>
+          <td>{{ pais.name.common }}</td>
+          <td>
+            <button (click)="seleccionarPais(pais)" class="btn btn-primary">Seleccionar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

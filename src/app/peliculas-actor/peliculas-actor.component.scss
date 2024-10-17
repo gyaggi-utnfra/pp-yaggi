@@ -1,0 +1,59 @@
+.pelicula-card {
+    border: 2px solid #007bff; /* Bordes más definidos */
+    border-radius: 10px; /* Bordes más redondeados */
+    padding: 15px; /* Espaciado interno */
+    background-color: #ffffff; /* Color de fondo blanco para mejor contraste */
+    transition: transform 0.3s, box-shadow 0.3s; /* Suavizar el efecto de hover */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    display: flex; /* Usar flexbox para alinear los elementos */
+    align-items: center; /* Alinear verticalmente al centro */
+    justify-content: space-between; /* Espacio entre los elementos */
+    height: auto; /* Altura automática para adaptarse al contenido */
+    margin-bottom: 15px; /* Margen inferior para separar tarjetas */
+
+    &:hover {
+        transform: translateY(-5px); /* Desplazar hacia arriba al pasar el mouse */
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada al pasar el mouse */
+    }
+
+    h5 {
+        font-size: 1.2em; /* Tamaño de fuente para el nombre */
+        margin: 10px 0; /* Margen para separar del resto del contenido */
+    }
+
+    p {
+        margin: 5px 0; /* Margen para separar los párrafos */
+    }
+}
+
+.pelicula-detalle {
+    flex: 1; /* Hacer que el detalle de la película ocupe el espacio restante */
+    padding-right: 15px; /* Espacio entre el texto y la imagen */
+}
+
+.img-fluid {
+    width: 30%; /* Asegura que la imagen no se desborde */
+    height: auto; /* Mantiene la relación de aspecto */
+    object-fit: cover; /* Mantiene la relación de aspecto y cubre el espacio */
+    border-radius: 5px; /* Bordes redondeados para la imagen */
+}
+
+.row {
+    display: flex; /* Hacer que la fila use flexbox */
+    flex-direction: column; /* Cambiar a columna para alinear verticalmente */
+    margin-left: -15px;  /* Espaciado para ajustar columnas */
+    margin-right: -15px; /* Espaciado para ajustar columnas */
+}
+
+.col-12 {
+    flex: 1 1 100%; /* Asegurarse de que ocupe el 100% del ancho */
+    max-width: 100%; /* Ancho máximo del 100% */
+    padding: 0 15px; /* Espaciado lateral para las columnas */
+}
+
+@media (max-width: 768px) {
+    .col-12 {
+        flex: 1 1 100%; /* Colapsar columnas en pantallas más pequeñas */
+        max-width: 100%; /* Ancho máximo del 100% */
+    }
+}
